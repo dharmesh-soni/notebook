@@ -55,6 +55,8 @@ Files for `absent` or `N/A` layers are still created but contain only a one-line
 
 ### Pass 1 — Overview (write `00-overview.md`, then stop)
 
+**Before investigating, check for pre-built tree files** at `<output_dir>/_trees/*.md`. These are produced by the companion `repo-tree-annotate` skill and contain the authoritative structural map: top-level dir roles, entry points, noise flags, and cross-repo references. If present, consume them as the structural prior — do not re-derive structure from scratch and do not overwrite the tree files. If absent, and the project is non-trivial (>~50 files), suggest the user run `repo-tree-annotate` first.
+
 Investigate and document:
 
 - **Domain / Purpose** — one paragraph: what does this agent *do for whom*? Infer from README, top-level docstrings, CLI help text, entry-point names. If unclear, ask the user one targeted question.
