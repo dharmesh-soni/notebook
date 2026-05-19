@@ -1,6 +1,6 @@
 ---
 name: subsystem-deepdive
-description: Produce a single-file behavioral deep-dive for one named subsystem of an agentic project — purpose, IO contracts, sequence, control flow (loops, branches, retries, timeouts, concurrency, cancellation), state, test scenarios, non-functional characteristics, observability, security, and design decisions. Mermaid diagrams are required. Output is IP-safe: behavior in the user's own words, no verbatim prompts/configs/proprietary algorithms. Output to docs/architecture/subsystems/<name>.md. Use when the user asks to "deep dive on <X>", "design doc for <X>", "document the <X> subsystem/flow", "capture how <X> works", or to design a new subsystem from scratch.
+description: Produce a single-file behavioral deep-dive for one named subsystem of an agentic project — purpose, IO contracts, sequence, control flow (loops, branches, retries, timeouts, concurrency, cancellation), state, test scenarios, non-functional characteristics, observability, security, and design decisions. Mermaid diagrams are required. Output is IP-safe - behavior in the user's own words, no verbatim prompts/configs/proprietary algorithms. Output to docs/architecture/subsystems/<name>.md. Use when the user asks to "deep dive on <X>", "design doc for <X>", "document the <X> subsystem/flow", "capture how <X> works", or to design a new subsystem from scratch.
 ---
 
 # Subsystem Deep-Dive
