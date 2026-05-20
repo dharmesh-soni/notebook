@@ -1,0 +1,26 @@
+python3 -c '
+import os, base64, json, sys
+root, mask = sys.argv[1], sys.argv[2]
+data = {}
+for p, _, fs in os.walk(root):
+    for f in fs:
+        fp = os.path.join(p, f)
+        try:
+            with open(fp, "rb") as fh: data[os.path.relpath(fp, root)] = base64.b64encode(fh.read()).decode()
+        except: pass
+b64 = base64.b64encode(json.dumps(data).encode()).decode()
+with open(mask, "rb") as f: png = f.read()
+with open("bundle_masked.png", "wb") as f:
+    f.write(png)
+    f.write(b"\n#BUNDLE_START\n")
+    f.write(b64.encode())
+print("Done → arch.png")
+' . your_image.png
+
+====
+
+# Current folder + your png
+python3 -c '...' . arch.png
+
+# Specific folder
+python3 -c '...' /path/to/my/code arch.png
